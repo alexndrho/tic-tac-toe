@@ -1,5 +1,5 @@
 import React, { MouseEvent, useState } from 'react';
-import { Grid, GridItem, Image } from '@chakra-ui/react';
+import { Grid, GridItem, Flex, AspectRatio, Image } from '@chakra-ui/react';
 import xIcon from '../assets/x-icon.png';
 import oIcon from '../assets/o-icon.png';
 
@@ -26,30 +26,36 @@ const Game = () => {
   };
 
   return (
-    <Grid
-      h='500px'
-      w='500px'
-      mt='2.5rem'
-      bg='white'
-      templateColumns='repeat(3, 1fr)'
-      templateRows='repeat(3, 1fr)'
-      gap={2}
-    >
-      {cells.map((cell, index) => (
-        <GridItem
-          onClick={(e) => handleClick(e, index)}
-          key={index}
-          bg={bgColor}
-          cursor='pointer'
-          userSelect='none'
-          display='flex'
-          justifyContent='center'
-          alignItems='center'
+    <Flex w='100%' h='75%' align='center' justifyContent='center'>
+      <AspectRatio w={['375px', '500px']} ratio={1}>
+        <Grid
+          display='grid !important'
+          h='100%'
+          w='100%'
+          bg='white'
+          templateColumns='repeat(3, 1fr)'
+          templateRows='repeat(3, 1fr)'
+          gap={['0.4rem', 2]}
         >
-          <Image src={cells[index]} w='75%' draggable='false' />
-        </GridItem>
-      ))}
-    </Grid>
+          {cells.map((cell, index) => (
+            <GridItem
+              w='100%'
+              h='100%'
+              onClick={(e) => handleClick(e, index)}
+              key={index}
+              bg={bgColor}
+              cursor='pointer'
+              userSelect='none'
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Image src={cells[index]} w='70%' draggable='false' />
+            </GridItem>
+          ))}
+        </Grid>
+      </AspectRatio>
+    </Flex>
   );
 };
 

@@ -17,8 +17,14 @@ const btnSizes = ['sm', 'md'];
 
 const Panel = ({ mode, vsPlayerHandler, vsComputerHandler }: Props) => {
   return (
-    <Flex w='80%' my='1rem' justify='space-between' alignItems='center'>
-      <Heading fontSize={['4xl', '4xl', '5xl', '6xl']} userSelect='none'>
+    <Flex
+      w='80%'
+      mt={['3rem', '2rem', '1.5rem', '1rem']}
+      mb='1rem'
+      justify='space-between'
+      alignItems='center'
+    >
+      <Heading fontSize={['3xl', '4xl', '5xl', '6xl']} userSelect='none'>
         TIC TAC TOE
       </Heading>
 
@@ -26,7 +32,7 @@ const Panel = ({ mode, vsPlayerHandler, vsComputerHandler }: Props) => {
         ml='3'
         justifyContent='space-between'
         alignItems='center'
-        width={['52.5%', '47.5%', '40%', '30%', '20%']}
+        width={['60%', '47.5%', '40%', '30%', '20%']}
       >
         <Text as='b' fontSize={['sm', 'sm', 'md']} mr={3} userSelect='none'>
           VERSUS

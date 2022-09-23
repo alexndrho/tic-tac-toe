@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <Flex flexDir='column' alignItems='center'>
+    <Flex w='100%' h='100%' flexDir='column' alignItems='center'>
       <Panel mode={mode} vsPlayerHandler={handleVsPlayer} vsComputerHandler={handleVsComputer} />
       <Game />
     </Flex>
